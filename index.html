@@ -359,8 +359,8 @@ let me=null,token=null,fMode='all',pinBuf='',pinFor=null;
 let chartBar=null,chartPie=null,chartLine=null;
 
 // ── PERSIST ──────────────────────────────────────────────
-function save(){try{sessionStorage.setItem('bs',JSON.stringify(S));}catch(e){}}
-function load(){try{const d=sessionStorage.getItem('bs');if(d)S={...S,...JSON.parse(d)};}catch(e){}}
+function save(){try{localStorage.setItem('bs',JSON.stringify(S));}catch(e){}}
+function load(){try{const d=localStorage.getItem('bs');if(d)S={...S,...JSON.parse(d)};}catch(e){}}
 
 // ── BOOT ─────────────────────────────────────────────────
 window.onload=()=>{
@@ -370,8 +370,9 @@ window.onload=()=>{
     token=p.get('access_token');
     history.replaceState({},'',' ');
     sessionStorage.setItem('od_token',token);
+    localStorage.setItem('od_token',token);
   }
-  token=token||sessionStorage.getItem('od_token')||null;
+  token=token||localStorage.getItem('od_token')||null;
   applyTheme(S.theme||'blue-dark');
   renderLogin();
   initSumFilters();
@@ -455,7 +456,7 @@ function initApp(){
   renderAll();
 }
 function doLogout(){
-  me=null;token=null;sessionStorage.removeItem('od_token');
+  me=null;token=null;sessionStorage.removeItem('od_token');localStorage.removeItem('od_token');
   document.getElementById('appScreen').style.display='none';
   document.getElementById('qFab').style.display='none';
   document.getElementById('loginScreen').style.display='flex';
