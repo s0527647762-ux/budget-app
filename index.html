@@ -721,5 +721,8 @@ function toast(msg,type=''){
   setTimeout(()=>t.className='toast',3000);
 }
 </script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js');
+}
 </body>
 </html>
