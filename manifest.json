@@ -1,13 +1,38 @@
 {
   "name": "תקציב משפחתי",
   "short_name": "תקציב",
-  "description": "ניהול תקציב משפחתי",
+  "description": "ניהול תקציב משפחתי מחובר ל-Excel",
   "start_url": "/budget-app/",
+  "id": "/budget-app/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#00d4ff",
   "lang": "he",
   "dir": "rtl",
+  "categories": ["finance", "productivity"],
+  "screenshots": [
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "הוסף הוצאה",
+      "short_name": "הוצאה",
+      "description": "הוספת הוצאה חדשה",
+      "url": "/budget-app/",
+      "icons": [
+        {
+          "src": "android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
       "src": "android-chrome-192x192.png",
